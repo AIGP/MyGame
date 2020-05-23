@@ -26,7 +26,7 @@ public class MyGame extends ApplicationAdapter {
 			texture = new Texture(pixmap);
 		}
 
-		public void update(float dt) {
+		public void update() {
 			position.x = MathUtils.random(100, 400);
 			position.y = MathUtils.random(100, 400);
 		}
@@ -117,6 +117,9 @@ public class MyGame extends ApplicationAdapter {
 
 	public void update(float dt) {
 		tank.update(dt);
+		if(Math.abs(tank.position.x-circle.position.x)< 80 && Math.abs(tank.position.x-circle.position.x)<80){
+			circle.update();
+		}
 	}
 
 	@Override
